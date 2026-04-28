@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -517,6 +518,7 @@ if data is None or data.empty:
     )
     st.stop()
 
+os.makedirs("data", exist_ok=True)
 data.to_csv("data/temp_stock.csv", index=False)
 
 # ===============================
